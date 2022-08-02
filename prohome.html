@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+<meta charset="utf-8">
+<title>NextIT</title>
+<link rel="icon" type="image/x-icon" href="./images/eyes.png">
+<link rel="stylesheet" type="text/css" href="./css/prohome.css">
+<link rel="stylesheet" type="text/css" href="./css/profooter.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    window.onload = function(){
+        // alert("window.onload")
+        $("#page_footer").load("./profooter.html");
+        let img_files =[
+            "./images/blacknoodle.jpg",
+            "./images/rednoodle.webp",
+            "./images/burger.jpg",
+            "./images/swordnoodle.jpeg",
+            "./images/cowsouprice.jpg",
+            "./images/icenoodle.png",
+            "./images/subway.jpg"
+        ];
+        let lunch_text =[
+            "짜장","짬뽕","햄버거","칼국수","소고기국밥","냉면","샌드위치"
+        ];
+        let lunch_map=[
+            "./images/blacknoodle_position.png",
+            "./images/rednoodle_position.png",
+            "./images/burger_position.png",
+            "./images/swordnoodle_position.png",
+            "./images/cowsouprice_position.png",
+            "./images/icenoodle_position.png",
+            "./images/subway_position.png"
+        ];
+        let div_img = document.getElementById("todayLunch");
+        let div_link= document.getElementById("menuList");
+        let div_map=document.getElementById("link");
+        let i=0;
+        let h1 = document.getElementById("about");
+        function fn_change_img(){
+            // alert("fn_change_img");
+            div_img.style.backgroundImage="url("+ img_files[i] +")";
+            if(i==img_files.length-1){
+                i=0;
+            }else{
+                i++;
+            }
+            
+        }
+        let timerID =setInterval(function(){
+            fn_change_img();
+        },50);
+        todayLunch.onclick = function(e){
+            clearInterval(timerID);
+            if(i!=0){
+                div_link.textContent=lunch_text[i-1];
+                div_map.style.backgroundImage="url("+ lunch_map[i-1]+")";
+            }else{
+                div_link.textContent=lunch_text[lunch_text.length-1];
+                div_map.style.backgroundImage="url("+ lunch_map[lunch_map.length-1]+")";
+            }
+        
+            todayLunch.onclick = function(e){
+             location.href="./prohome.html";
+            }
+        }
+            
+    }
+    function fn_load_map(){
+        window.open('//map.naver.com/v5/entry/place/38301620?c=14182917.4847979,4345791.9751080,15,0,0,0,dh&placePath=%2Fhome%3Fentry=pll','name','resizable=no width=1000 height=800');return false
+    }
+    function fn_alert_logout(){
+        alert("로그아웃 되었습니다.");
+    }
+</script>
+</head>
+    <body>
+    <div id="wrap">
+        <div id="img_div" class="intro_bg">
+            <div class="header">
+                <!--header s-->
+                <div class="searchArea">
+                    <form action="">
+                        <input type="text" id="input_search" name="input_search"
+                        value="" placeholder="Search">
+                        <span>검색</span>
+                    </form>
+              </div>
+                <ul class="nav">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#lunch">오점무</a></li>
+                    <li><a href="#">게시판</a>
+                        <ul>
+                            <li><a href="./proboard_list.html">전체 글</a></li>
+                            <li><a href="#">추천 글</a></li>
+                            <li><a href="./proboard_alarm.html">공지사항</a></li>
+                            <li><a href="./proboard_write.html">글 쓰기</a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li onclick="fn_alert_logout()"><a href="./prologin.html">LOGOUT</a></li>
+                </ul>
+                <!-- 반응형 추가 s -->
+                <input type="checkbox" id="menuicon">
+                <!-- 3줄 선 그리기 -->
+                <label for="menuicon">
+                <span></span>
+                <span></span>
+                <span></span>
+                </label>
+            <div class="header_icon">
+                <ul class="menu">
+                    <li><a href="#">HOME</a></li>
+                    <li class="board_icon" ><a href="#about">게시판</a>
+                        <ul>
+                            <li><a href="./proboard_list.html">전체 글</a></li>
+                            <li><a href="#">추천 글</a></li>
+                            <li><a href="./proboard_alarm.html">공지사항</a></li>
+                            <li><a href="./proboard_write.html">글 쓰기</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="todaylunch"><a href="#lunch">오점무</a></li>
+                    <li onclick="fn_alert_logout()"><a href="./prologin.html">LOGOUT</a></li>
+                </ul>
+            </div>
+            </div>
+            <div class="intro_text">
+                <h1>NextIT 커뮤니티</h1>
+                <h4>NextIT</h4>
+    
+            </div>
+        </div>
+<!-- 1차 작업 intro_bg e -->
+<!-- 2차 작업 sub_title_div s -->
+        <div class="sub_title_div">
+            <ul class="sub_title">
+                <li>
+                    <div>
+                        <h2 onclick="location.href='./proboard_list.html'">전체 글보기</h2>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2>추천 글보기</h2>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2 onclick="location.href='./proboard_alarm.html'">공지사항</h2>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h2 onclick="location.href='./proboard_write.html'">글쓰기</h2>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 2차 작업 sub_title_div e -->
+        <!-- 3차 작업 main_text0 s -->
+        <div class="main_text0">
+            <h1 id="about">ABOUT</h1>
+            <ul class="icons">
+                <li>
+                    <div class="icon_img">
+                        <img src="./images/internet.png" alt="이미지가 없습니다.">
+                    </div>
+                    <div class="contents1_bold">
+                        <p>홈페이지</p>
+                    </div>
+                    <div class="more" onclick="location.href='http://www.nextit.or.kr/index.html'">
+                        바로가기
+                    </div>
+                </li>
+                <li>
+                    <div class="icon_img">
+                        <img src="./images/placeholder.png" alt="이미지가 없습니다.">
+                    </div>
+                    <div class="contents1_bold">
+                        <p>찾아오시는 길</p>
+                    </div>
+                    <div class="map">
+                            <a id="load_map" onclick="fn_load_map()">
+                                지도보기</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 3차 작업 main_text0 e -->
+        <!-- 4차 작업 main_text1 s -->
+        <div class="add_text">
+            <ul><p id="p_1">이 달의 우수 학생</p>
+                <ul>
+                    <li></li>
+                    <li> 1. 유동준</li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li> 2. 박기현</li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li> 3. 이한정</li>
+                </ul>
+            </ul>
+        </div>
+        
+<!-- 4차 작업 main_text1 e -->
+<!-- 5차 작업 main_text2 s -->
+        <div class="main_text1">
+            <h1 id="lunch">오늘점심무엇?</h1>
+            <div class="lunch">
+                <div>
+                    <img id="todayLunch" >
+                </div>
+                <div id="contents3">
+                    <h2 style="color: lightcoral;">랜덤 점심 추천</h2>
+                    <p id="menuList" style="color: lightcoral; margin-top: 20px;"></p>
+                    <div id="link"></div>
+                </div>
+            </div>
+        </div>
+<!-- 5차 작업 main_text2 e -->
+<div class="main_text2">
+    <ul>
+        <li>
+            <div class="last_bg1">
+                <h1 id="advertise">ADV</h1>
+                <div class="adver">
+                    <!-- <p>광고란 입니다.</p> -->
+                    <video src="./videos/adver.mp4" autoplay loop muted></video>
+                    <video src="./videos/legoland.mp4" autoplay loop muted></video>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!-- 6차 footer 작업 s-->
+        <footer id="page_footer">
+
+        </footer>
+</div>
+    </body>
+    </html>

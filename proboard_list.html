@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>NextIT</title>
+        <link rel="icon" type="image/x-icon" href="./images/eyes.png">
+        <link rel="stylesheet" type="text/css" href="./css/proheader.css">
+        <link rel="stylesheet" type="text/css" href="./css/proboard_list.css">
+        <link rel="stylesheet" type="text/css" href="./css/profooter.css">
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            window.onload=function(){
+                $("#page_footer").load("./profooter.html");
+                $(".header").load("./proheader.html");
+            }
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="header">
+            </div>
+            <!-- header e -->
+            <div class="intro_bg">
+                <div></div>
+            </div>
+            <!-- intro_bg e -->
+            <div class="contents">
+                <div class="content01">
+                    <div class="content01_h1">
+                        <h1>전체 글</h1>
+                    </div>
+                    <!-- 리스트 -->
+                    <div id="div_table">
+                        <table>
+                            <colgroup>
+                                <col width="40">
+                                <col>
+                                <col width="180">
+                                <col width="300">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>시간</th>
+                                </tr>
+                            </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>점심뭐먹지...</td>
+                                        <td><a class="gosu"><의문의고수></a>오점무</td>
+                                        <td>2022.05.24</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>오늘부터 언더아머 단속 들어갑니다.</td>
+                                        <td>3대500</td>
+                                        <td>2022.05.24</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>월월월월월월월월월월월월월!!</td>
+                                        <td>월요일이 되면 짖는 개</td>
+                                        <td>2022.05.23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>난...ㄱr끔...눈물을 흘린ㄷㅏ .... </td>
+                                        <td>김선생</td>
+                                        <td>2022.05.23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>오늘은 하체 하는 날~</td>
+                                        <td>근손실은안된다</td>
+                                        <td>2022.05.23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>팀프같이 하실 분 랏1 구함</td>
+                                        <td><a class="gosu"><의문의고수></a>컴잘알</td>
+                                        <td>2022.05.22</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>코드 공유하실분~~</td>
+                                        <td>화면구현장인</td>
+                                        <td>2022.05.21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>이 집 짬뽕 맛있네요!</td>
+                                        <td>맛점</td>
+                                        <td>2022.05.20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>컹컹~으르르 컹컹!!</td>
+                                        <td>이상한 사람보면 짖는 개</td>
+                                        <td>2022.05.20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>??</td>
+                                        <td>그냥이한정</td>
+                                        <td>2022.05.20</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- paging -->
+                    <div class="div_paging">
+                        <div class="div_paging_a">
+                            <a href="#">&lt;&lt;</a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">&gt;&gt;</a>
+                        </div>
+                        <div class="div_board_write">
+                            <input type="button" value="글쓰기" onclick="location.href='./proboard_write.html'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content e -->
+            <footer id="page_footer">
+                <!-- footer s -->
+
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>NextIT</title>
+        <link rel="icon" type="image/x-icon" href="./images/eyes.png">
+        <link rel="stylesheet" type="text/css" href="./css/proheader.css">
+        <link rel="stylesheet" type="text/css" href="./css/proboard_alarm.css">
+        <link rel="stylesheet" type="text/css" href="./css/profooter.css">
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            window.onload=function(){
+                $("#page_footer").load("./profooter.html");
+                $(".header").load("./proheader.html");
+            }
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="header">
+            </div>
+            <!-- header e -->
+            <div class="intro_bg">
+                <div class="back"></div>
+                </div>
+            </div>
+            <!-- intro_bg e -->
+            <div class="contents">
+                <div class="content01">
+                    <div class="content01_h1">
+                        <h1>공지사항</h1>
+                    </div>
+                    <!-- 리스트 -->
+                    <div id="div_table">
+                        <table>
+                            <colgroup>
+                                <col width="40">
+                                <col>
+                                <col width="180">
+                                <col width="300">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>시간</th>
+                                </tr>
+                            </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>5월22일(일요일) 13~18 학원개방합니다.</td>
+                                        <td>신용우</td>
+                                        <td>2022.05.21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>5월 15일(일요일) 13~18 학원개방합니다.</td>
+                                        <td>신용우</td>
+                                        <td>2022.05.13</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>5월 14일(토요일) 11~16 학원개방합니다.</td>
+                                        <td>이앞길</td>
+                                        <td>2022.05.13</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>5월08일(일요일) 15~18 학원개방합니다.</td>
+                                        <td>신용우</td>
+                                        <td>2022.05.06</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>5월08일(일요일) 10~17 학원개방합니다.</td>
+                                        <td>이앞길</td>
+                                        <td>2022.05.06</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>5월08일(일요일) 10~17 학원개방합니다.</td>
+                                        <td>이앞길</td>
+                                        <td>2022.05.04</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>5월01일(일요일) 13~18 학원개방합니다.</td>
+                                        <td>신용우</td>
+                                        <td>2022.04.29</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>4월 24일(일요일) 13~18 학원개방합니다.</td>
+                                        <td>신용우</td>
+                                        <td>2022.04.22</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- paging -->
+                    <div class="div_paging">
+                        <div class="div_paging_a">
+                            <a href="#">&lt;&lt;</a>
+                            <a href="#">1</a>
+                            <a href="#">&gt;&gt;</a>
+                        </div>
+                        <div class="div_board_write">
+                            <input type="button" value="글쓰기" onclick="location.href='./proboard_write.html'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content e -->
+            <footer id="page_footer">
+                <!-- footer s -->
+            </footer>
+        </div>
+    </body>
+</html>

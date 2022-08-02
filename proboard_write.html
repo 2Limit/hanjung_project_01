@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>NextIT</title>
+        <link rel="icon" type="image/x-icon" href="./images/eyes.png">
+        <link rel="stylesheet" type="text/css" href="./css/proheader.css">
+        <link rel="stylesheet" type="text/css" href="./css/proboard_write.css">
+        <link rel="stylesheet" type="text/css" href="./css/profooter.css">
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            window.onload=function(){
+                $("#page_footer").load("./profooter.html");
+                $(".header").load("./proheader.html");
+            }
+            function fn_submit(){
+                let notice_lecture = document.getElementById("notice_lecture").value;
+                console.log("notice lecture :: ", notice_lecture);
+                let notice_title = document.getElementById("notice_title").value;
+                console.log("notice title :: ", notice_title)
+                let notice_content = document.getElementById("notice_content").value;
+                console.log("notice content :: " ,notice_content)
+                let notice_gender = document.getElementById("gender").value;
+                console.log("gender :: " ,notice_gender)
+                let notice_job = document.querySelector("input[name='job']:checked").value;
+                console.log("notice_job :: ",notice_job)
+                let region = document.querySelectorAll('input[name="region"]:checked');
+                let notice_region=[];
+                for(let i=0; i<region.length;i++){
+                    notice_region.push(region[i]).value;
+                }
+                console.log("notice_region :: ",notice_region);
+                
+                alert("게시물이 등록되었습니다.");
+                if(notice_lecture=="normal"){
+                    location.href="./proboard_list.html";
+                }else if(notice_lecture=="alarm"){
+                    location.href="./proboard_alarm.html";
+                }
+            }
+            function fn_insert(){
+                let notice_lecture = document.getElementById("notice_lecture").value;
+                console.log("notice lecture :: ", notice_lecture);
+                let notice_title = document.getElementById("notice_title").value;
+                console.log("notice title :: ", notice_title);
+                let notice_content = document.getElementById("notice_content").value;
+                console.log("notice content :: " ,notice_content);
+                let notice_gender = document.getElementById("gender").value;
+                console.log("gender :: " ,notice_gender);
+                let notice_job = document.querySelector("input[name='job']:checked").value;
+                console.log("notice_job :: ",notice_job);
+                let region = document.querySelectorAll('input[name="region"]:checked');
+                let notice_region=[];
+                for(let i=0; i<region.length;i++){
+                    notice_region.push(region[i]).value;
+                }
+                console.log("notice_region :: ",notice_region);
+                
+                alert("게시물이 수정되었습니다.");
+                location.href="./proboard_list.html";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="header">
+            </div>
+            <!-- header e -->
+            <div class="intro_bg">
+                <div class="back"></div>
+                </div>
+            </div>
+            <!-- intro_bg e -->
+            <div class="contents">
+                <div class="content01">
+                    <div class="content01_h1">
+                        <h1>글 쓰기</h1>
+                    </div>
+                    <form action="" id="editor_form" method="post">
+                        <div id="div_table">
+                        <table>
+                            <colgroup>
+                                <col width="200">
+                                <col width="400">
+                            </colgroup>
+                            <tr>
+                                <td class="td_left">분류</td>
+                                <td class="td_write">
+                                    <select name="lecture" id="notice_lecture">
+                                        <option value="normal" selected>그냥 글</option>
+                                        <option value="alarm" >공지</option>                                        
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_left">제목</td>
+                                <td class="td_write">
+                                    <input type="text" id="notice_title" maxlength="30" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_left">내용</td>
+                                <td class="td_write">
+                                    <textarea name="notice content" id="notice_content" maxlength="30" rows="10"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_left">성별</td>
+                                <td class="td_write">
+                                    <select name="gender" id="gender">
+                                        <option value="men" selected>남성</option>
+                                        <option value="women" >여성</option>                                        
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_left">직업</td>
+                                <td class="td_write">
+                                    <label for="student">
+                                    <input type="radio" name="job" id="student" value="student" checked>학생&nbsp;&nbsp;&nbsp;
+                                </label>
+                                    <label for="teacher">
+                                    <input type="radio" name="job" id="teacher" value="teacher" >선생님&nbsp;&nbsp;&nbsp;
+                                </label>
+                                    <label for="developer">
+                                    <input type="radio" name="job" id="developer" value="developer" >개발자&nbsp;&nbsp;&nbsp;
+                                </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_left">지역</td>
+                                <td class="td_write">
+                                    <label for="Seoul">
+                                    <input type="checkbox" name="region" id="Seoul" value="Seoul" checked>서울&nbsp;&nbsp;&nbsp;
+                                </label>
+                                    <label for="Daejeon">
+                                    <input type="checkbox" name="region" id="Daejeon" value="Daejeon" >대전&nbsp;&nbsp;&nbsp;
+                                </label>
+                                    <label for="Gwangju">
+                                    <input type="checkbox" name="region" id="Gwangju" value="Gwangju" >광주&nbsp;&nbsp;&nbsp;
+                                </label>
+                                </td>
+                            </tr>
+                        </table>
+                        </div>
+                        <!-- 버튼 -->
+                        <div id="div_button">
+                            <input type="button" value="목록" onclick="location.href='./proboard_list.html'">
+                            <input type="button" value="등록" onclick="fn_submit()">
+                            <input type="button" value="수정" onclick="fn_insert()">
+                            <!-- <input type="button" value="삭제"> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- content e -->
+            <footer id="page_footer">
+                <!-- footer s -->
+
+            </footer>
+        </div>
+    </body>
+</html>
